@@ -3,263 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KOJO SOLUTIONS | Learn Business Solutions & Digital Skills</title>
-  <meta name="description" content="Kojo Solutions - Learn website creation, software making, and join exclusive WhatsApp classes. Business solutions training.">
+  <title>Kojo Solutions — Learn Business Solutions</title>
+  <meta name="description" content="Master website creation, software development and join exclusive learning classes with Kojo Solutions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a4d8c' width='100' height='100' rx='20'/><text x='50' y='68' font-size='50' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'>K</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230057FF' width='100' height='100' rx='22'/><text x='50' y='66' font-size='42' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'>KS</text></svg>">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="nav-container">
+
+  <!-- Floating Header -->
+  <header class="header">
+    <div class="header-inner">
       <a href="index.html" class="logo">
-        <div class="logo-icon">KS</div>
-        <span>KOJO SOLUTIONS</span>
+        <div class="logo-mark">KS</div>
+        <span>Kojo Solutions</span>
       </a>
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="pages/course-101.html">Course 101</a></li>
-          <li><a href="pages/course-202.html">Course 202</a></li>
-          <li><a href="pages/course-303.html">Course 303</a></li>
-          <li><a href="pages/email-services.html">Email Services</a></li>
-          <li><a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Contact</a></li>
-        </ul>
-      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- Hero Banner -->
+  <!-- Mobile Nav -->
+  <div class="nav-overlay" id="navOverlay"></div>
+  <nav class="nav-panel" id="navPanel">
+    <a href="index.html">Home</a>
+    <div class="nav-label">Classes</div>
+    <a href="pages/course-101.html" class="sub-link">101 — Website Creation</a>
+    <a href="pages/course-202.html" class="sub-link">202 — Software Making</a>
+    <a href="pages/course-303.html" class="sub-link">303 — WhatsApp Class</a>
+    <a href="#contact" style="margin-top: 20px;">Contact</a>
+  </nav>
+
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1>KOJO SOLUTIONS</h1>
-        <p class="tagline">Learning Gathering for Business Solutions</p>
-        <p>Master website creation, software development, and exclusive community learning. Build real digital products with no-code tools, AI assistance, and expert guidance.</p>
-        <div class="hero-buttons">
-          <a href="#courses" class="btn btn-primary">Explore Courses</a>
-          <a href="pages/course-303.html" class="btn btn-whatsapp">Join WhatsApp Class</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <div class="hero-card">
-          <div class="big-logo">KS</div>
-          <h3 style="color: white; margin-bottom: 0.5rem;">KOJO SOLUTIONS</h3>
-          <p style="opacity: 0.9; font-size: 0.95rem;">Business Solutions • Learning • Innovation</p>
-          <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.8;">Use this logo for WhatsApp group & branding</p>
-        </div>
+    <div class="hero-inner">
+      <h1>Build Skills.<br>Grow Business.</h1>
+      <p class="subtitle">Practical classes in website creation, software making, and exclusive community learning — designed for real results.</p>
+      <div class="hero-actions">
+        <a href="#classes" class="btn btn-white">Explore Classes</a>
+        <a href="pages/course-303.html" class="btn btn-accent">Join WhatsApp Class</a>
       </div>
     </div>
   </section>
 
-  <!-- About / Value Prop -->
-  <section>
+  <!-- Classes -->
+  <section class="section" id="classes">
     <div class="container">
-      <div class="section-title">
-        <h2>Why Choose Kojo Solutions?</h2>
-        <p>We turn learning into real business capabilities. From websites to software and community mastery.</p>
+      <div class="section-header">
+        <h2>Our Classes</h2>
+        <p>Three focused learning paths. Pick what you need and start building today.</p>
       </div>
-      <div class="features-grid">
-        <div class="feature-box">
-          <div class="feature-icon">🌐</div>
-          <h3>Website Creation</h3>
-          <p>Learn and request professional websites using no-code templates + free AI assistance. Download ready files.</p>
-        </div>
-        <div class="feature-box">
-          <div class="feature-icon">💻</div>
-          <h3>Software Making</h3>
-          <p>Request custom software solutions. Describe your needs and get professional development support.</p>
-        </div>
-        <div class="feature-box">
-          <div class="feature-icon">📱</div>
-          <h3>WhatsApp Learning</h3>
-          <p>Join exclusive live classes and community on WhatsApp. Interactive learning with peers and mentors.</p>
-        </div>
-        <div class="feature-box">
-          <div class="feature-icon">📧</div>
-          <h3>Email Business Setup</h3>
-          <p>Learn how to set up professional receivable inbox emails for your business communications.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Courses -->
-  <section id="courses" style="background: var(--light-gray);">
-    <div class="container">
-      <div class="section-title">
-        <h2>Our Learning Courses</h2>
-        <p>Structured learning paths in the Kojo Solutions Learning Gathering</p>
-      </div>
       <div class="courses-grid">
-        <!-- Course 101 -->
-        <div class="course-card">
-          <div class="course-header">
-            <div class="code">COURSE 101</div>
-            <h3>Website Creation</h3>
-          </div>
-          <div class="course-body">
-            <div class="course-price">$50 <span style="font-size:0.9rem;font-weight:400;color:var(--text-light)">per request</span></div>
-            <p>Master website building with no-code templates and free AI tools. Request custom sites and download complete files.</p>
-            <ul class="course-features">
-              <li>Website creation learning modules</li>
-              <li>Free AI-powered site generator</li>
-              <li>No-code template builder</li>
-              <li>Instant file download</li>
-              <li>Request-based custom websites</li>
-            </ul>
-            <a href="pages/course-101.html" class="btn btn-primary" style="width:100%;">Start Course 101</a>
-          </div>
-        </div>
+        <!-- 101 -->
+        <article class="course-card">
+          <span class="course-badge">CLASS 101</span>
+          <h3>Website Creation</h3>
+          <p>Learn no-code website building with free AI assistance. Generate sites, download files, or request a custom build.</p>
+          <div class="course-price">$50 <span>/ request</span></div>
+          <a href="pages/course-101.html" class="btn btn-primary">Start Class</a>
+        </article>
 
-        <!-- Course 202 -->
-        <div class="course-card">
-          <div class="course-header">
-            <div class="code">COURSE 202</div>
-            <h3>Software Making</h3>
-          </div>
-          <div class="course-body">
-            <div class="course-price">$50 <span style="font-size:0.9rem;font-weight:400;color:var(--text-light)">per request</span></div>
-            <p>Request custom software solutions. Submit your requirements and receive professional development support via email.</p>
-            <ul class="course-features">
-              <li>Custom software on request</li>
-              <li>Detailed requirement form</li>
-              <li>Direct email delivery to experts</li>
-              <li>Business-focused solutions</li>
-              <li>Follow-up support guidance</li>
-            </ul>
-            <a href="pages/course-202.html" class="btn btn-primary" style="width:100%;">Start Course 202</a>
-          </div>
-        </div>
+        <!-- 202 -->
+        <article class="course-card">
+          <span class="course-badge">CLASS 202</span>
+          <h3>Software Making</h3>
+          <p>Request custom software solutions. Describe your needs and receive professional development support.</p>
+          <div class="course-price">$50 <span>/ request</span></div>
+          <a href="pages/course-202.html" class="btn btn-primary">Start Class</a>
+        </article>
 
-        <!-- Course 303 -->
-        <div class="course-card">
-          <div class="course-header">
-            <div class="code">COURSE 303</div>
-            <h3>WhatsApp Class</h3>
-          </div>
-          <div class="course-body">
-            <div class="course-price">$100 <span style="font-size:0.9rem;font-weight:400;color:var(--text-light)">one-time</span></div>
-            <p>Join the exclusive Kojo Solutions WhatsApp group for live classes, discussions, and community learning.</p>
-            <ul class="course-features">
-              <li>Live interactive classes</li>
-              <li>Exclusive community access</li>
-              <li>Direct mentor interaction</li>
-              <li>Payment required before join</li>
-              <li>Bitcoin payment accepted</li>
-            </ul>
-            <a href="pages/course-303.html" class="btn btn-whatsapp" style="width:100%;">Join WhatsApp Class</a>
-          </div>
-        </div>
+        <!-- 303 -->
+        <article class="course-card">
+          <span class="course-badge">CLASS 303</span>
+          <h3>WhatsApp Class</h3>
+          <p>Join the private learning group. Live sessions, community support, and exclusive resources including business email setup.</p>
+          <div class="course-price">$100 <span>/ one-time</span></div>
+          <a href="pages/course-303.html" class="btn btn-whatsapp">Join Group</a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Business Solutions -->
-  <section>
-    <div class="container">
-      <div class="section-title">
-        <h2>Business Solutions We Deliver</h2>
-        <p>Practical digital skills that power real businesses</p>
-      </div>
-      <div class="features-grid">
-        <div class="feature-box">
-          <div class="feature-icon">🚀</div>
-          <h3>Website Launch</h3>
-          <p>From idea to live site. Template-based + AI assisted builds ready for download and hosting on GitHub or Render.</p>
+  <!-- Simple CTA -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container text-center">
+      <div style="background: linear-gradient(135deg, #0057FF, #003DB3); border-radius: 24px; padding: 56px 32px; color: white;">
+        <h2 style="color: white; margin-bottom: 16px;">Ready to level up?</h2>
+        <p style="color: rgba(255,255,255,0.9); max-width: 440px; margin: 0 auto 28px;">Start with a website or software request, or join the exclusive WhatsApp learning community.</p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <a href="pages/course-101.html" class="btn btn-white">Website Class</a>
+          <a href="pages/course-303.html" class="btn btn-accent">WhatsApp Class</a>
         </div>
-        <div class="feature-box">
-          <div class="feature-icon">⚙️</div>
-          <h3>Custom Software</h3>
-          <p>Request tools, automations, and applications tailored to your business needs.</p>
-        </div>
-        <div class="feature-box">
-          <div class="feature-icon">📬</div>
-          <h3>Professional Email</h3>
-          <p>Learn setup of inbox-receivable business emails that look professional and work reliably.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Banner -->
-  <section style="background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: white; text-align: center;">
-    <div class="container">
-      <h2 style="color: white; margin-bottom: 1rem;">Ready to Build Your Digital Future?</h2>
-      <p style="opacity: 0.9; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Start with Course 101 for websites, request software in 202, or join the exclusive WhatsApp learning group today.</p>
-      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="pages/course-101.html" class="btn" style="background: white; color: var(--primary);">Website Course</a>
-        <a href="pages/course-303.html" class="btn btn-whatsapp">Join WhatsApp Group</a>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact">
+  <section class="section" id="contact" style="padding-top: 20px;">
     <div class="container">
-      <div class="section-title">
-        <h2>Contact Us</h2>
-        <p>Have questions? Reach out directly.</p>
+      <div class="section-header">
+        <h2>Get in Touch</h2>
+        <p>Questions? Send a message or email us directly.</p>
       </div>
-      <div class="form-section">
-        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-card">
+        <form onsubmit="return sendContact(event)">
           <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required placeholder="Your name">
+            <label for="cName">Name</label>
+            <input type="text" id="cName" required placeholder="Your name">
           </div>
           <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required placeholder="you@example.com">
+            <label for="cEmail">Email</label>
+            <input type="email" id="cEmail" required placeholder="you@example.com">
           </div>
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
+            <label for="cMsg">Message</label>
+            <textarea id="cMsg" required placeholder="How can we help?"></textarea>
           </div>
           <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
         </form>
-        <p style="text-align:center; margin-top:1.5rem; color:var(--text-light); font-size:0.9rem;">
-          Or email us directly: <a href="mailto:ajewoletemitope11@gmail.com">ajewoletemitope11@gmail.com</a>
+        <p class="text-center" style="margin-top: 20px; font-size: 0.95rem;">
+          Or email: <a href="mailto:ajewoletemitope11@gmail.com">ajewoletemitope11@gmail.com</a>
         </p>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-brand">
-        <h3>KOJO SOLUTIONS</h3>
-        <p>Learning Gathering for Business Solutions. Website creation, software making, and community mastery.</p>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom: 16px;">
+          <div class="logo-mark">KS</div>
+          <span style="color: white;">Kojo Solutions</span>
+        </div>
+        <p>Practical learning for website creation, software making, and business growth.</p>
       </div>
-      <div class="footer-links">
-        <h4>Courses</h4>
-        <ul>
+      <div>
+        <h4>Classes</h4>
+        <ul class="footer-links">
           <li><a href="pages/course-101.html">101 — Website Creation</a></li>
           <li><a href="pages/course-202.html">202 — Software Making</a></li>
           <li><a href="pages/course-303.html">303 — WhatsApp Class</a></li>
         </ul>
       </div>
-      <div class="footer-links">
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="pages/email-services.html">Email Services Guide</a></li>
-          <li><a href="#courses">All Courses</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Connect</h4>
-        <ul>
-          <li><a href="mailto:ajewoletemitope11@gmail.com">Email Us</a></li>
-          <li><a href="pages/course-303.html">WhatsApp Group</a></li>
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:ajewoletemitope11@gmail.com">ajewoletemitope11@gmail.com</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Kojo Solutions. All rights reserved. Built for GitHub Pages & Render deployment.</p>
+      © 2026 Kojo Solutions. All rights reserved.
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    function sendContact(e) {
+      e.preventDefault();
+      const name = document.getElementById('cName').value;
+      const email = document.getElementById('cEmail').value;
+      const msg = document.getElementById('cMsg').value;
+      const subject = encodeURIComponent('Contact from Kojo Solutions — ' + name);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${msg}`);
+      window.location.href = `mailto:ajewoletemitope11@gmail.com?subject=${subject}&body=${body}`;
+      return false;
+    }
+  </script>
 </body>
 </html>
