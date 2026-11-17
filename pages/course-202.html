@@ -3,229 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Course 202 — Software Making | Kojo Solutions</title>
+  <title>Class 202 — Software Making | Kojo Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a4d8c' width='100' height='100' rx='20'/><text x='50' y='68' font-size='50' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'>K</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230057FF' width='100' height='100' rx='22'/><text x='50' y='66' font-size='42' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'>KS</text></svg>">
 </head>
 <body>
-  <header>
-    <div class="nav-container">
+
+  <header class="header">
+    <div class="header-inner">
       <a href="../index.html" class="logo">
-        <div class="logo-icon">KS</div>
-        <span>KOJO SOLUTIONS</span>
+        <div class="logo-mark">KS</div>
+        <span>Kojo Solutions</span>
       </a>
-      <nav>
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="course-101.html">Course 101</a></li>
-          <li><a href="course-202.html" class="active">Course 202</a></li>
-          <li><a href="course-303.html">Course 303</a></li>
-          <li><a href="email-services.html">Email Services</a></li>
-        </ul>
-      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
+  <div class="nav-overlay" id="navOverlay"></div>
+  <nav class="nav-panel" id="navPanel">
+    <a href="../index.html">Home</a>
+    <div class="nav-label">Classes</div>
+    <a href="course-101.html" class="sub-link">101 — Website Creation</a>
+    <a href="course-202.html" class="sub-link">202 — Software Making</a>
+    <a href="course-303.html" class="sub-link">303 — WhatsApp Class</a>
+    <a href="../index.html#contact" style="margin-top:20px;">Contact</a>
+  </nav>
+
   <section class="page-hero">
-    <h1>Course 202 — Software Making</h1>
-    <p>Request custom software solutions. Describe what you need and our team will work on it. Payment required per request.</p>
+    <h1>Class 202<br>Software Making</h1>
+    <p>Request custom software. Describe what you need — we build it and deliver.</p>
   </section>
 
-  <section>
+  <section class="section">
     <div class="container">
-      <div class="section-title">
-        <h2>How Software Making Works</h2>
-        <p>Simple process from idea to delivered solution</p>
+      <div class="section-header">
+        <h2>How it works</h2>
       </div>
       <div class="features-grid">
-        <div class="feature-box">
+        <div class="feature-card">
           <div class="feature-icon">1</div>
-          <h3>Describe Your Need</h3>
-          <p>Fill the software request form with clear requirements, features, and goals.</p>
+          <h3>Describe</h3>
+          <p>Tell us exactly what the software should do, platforms, and any preferences.</p>
         </div>
-        <div class="feature-box">
+        <div class="feature-card">
           <div class="feature-icon">2</div>
           <h3>Pay $50</h3>
-          <p>Send $50 in Bitcoin to the provided wallet and include the transaction proof.</p>
+          <p>Send $50 in Bitcoin and include the transaction ID with your request.</p>
         </div>
-        <div class="feature-box">
+        <div class="feature-card">
           <div class="feature-icon">3</div>
-          <h3>We Build & Deliver</h3>
-          <p>Your request is emailed directly to us. We develop and deliver the software solution.</p>
+          <h3>Receive</h3>
+          <p>We build and deliver the solution directly to your email.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section style="background: var(--light-gray);">
+  <section class="section" style="padding-top:0;">
     <div class="container">
-      <div class="section-title">
-        <h2>Request Custom Software — $50</h2>
-        <p>Submit your software creation request. Payment of $50 required before we begin.</p>
+      <div class="section-header">
+        <h2>Submit Software Request</h2>
+        <p>$50 · Payment required</p>
       </div>
 
-      <div class="payment-box">
-        <h3>Payment Required: $50 USD in Bitcoin</h3>
-        <div class="price-tag">$50</div>
-        <p><strong>Send Bitcoin to this wallet:</strong></p>
-        <div class="btc-address" id="btcAddress">bc1qw4l3wkn62pa4skszmwx66gr5r7da5das54y55t</div>
-        <button class="btn btn-outline" onclick="copyAddress()">Copy Wallet Address</button>
-        <p style="margin-top:1rem; font-size:0.9rem;">After sending payment, complete the form below and include your Transaction ID (TXID).</p>
+      <div class="payment-card">
+        <p style="font-weight:600; color:var(--dark);">Send $50 in Bitcoin</p>
+        <div class="amount">$50</div>
+        <div class="btc-box" id="btcAddress">bc1qw4l3wkn62pa4skszmwx66gr5r7da5das54y55t</div>
+        <button class="btn btn-outline" onclick="copyAddress()">Copy Address</button>
       </div>
 
-      <div class="form-section">
-        <form id="softwareForm" onsubmit="return submitSoftwareRequest(event)">
+      <div class="form-card">
+        <form onsubmit="return submitSoftware(event)">
           <div class="form-group">
-            <label for="name">Your Full Name *</label>
-            <input type="text" id="name" name="name" required placeholder="John Doe">
+            <label>Full Name *</label>
+            <input type="text" id="name" required>
           </div>
           <div class="form-group">
-            <label for="email">Your Email Address *</label>
-            <input type="email" id="email" name="email" required placeholder="you@example.com">
+            <label>Email *</label>
+            <input type="email" id="email" required>
           </div>
           <div class="form-group">
-            <label for="phone">Phone / WhatsApp (optional)</label>
-            <input type="text" id="phone" name="phone" placeholder="+234 ...">
+            <label>Phone / WhatsApp</label>
+            <input type="text" id="phone" placeholder="+234 ...">
           </div>
           <div class="form-group">
-            <label for="softwareType">Type of Software *</label>
-            <select id="softwareType" name="type" required>
-              <option value="">Select type...</option>
-              <option value="Web Application">Web Application</option>
-              <option value="Desktop Tool">Desktop Tool / Utility</option>
-              <option value="Automation Script">Automation Script</option>
-              <option value="Business Tool">Business / Inventory Tool</option>
-              <option value="API / Integration">API or Integration</option>
-              <option value="Other">Other (describe below)</option>
+            <label>Software Type *</label>
+            <select id="type" required>
+              <option value="">Select...</option>
+              <option>Web Application</option>
+              <option>Desktop Tool</option>
+              <option>Automation Script</option>
+              <option>Business Tool</option>
+              <option>API / Integration</option>
+              <option>Other</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="title">Software Title / Name</label>
-            <input type="text" id="title" name="title" placeholder="e.g. Inventory Manager Pro">
+            <label>Software Title</label>
+            <input type="text" id="title" placeholder="e.g. Inventory Manager">
           </div>
           <div class="form-group">
-            <label for="description">Detailed Requirements *</label>
-            <textarea id="description" name="description" required placeholder="Describe exactly what the software should do, key features, platforms (Windows/Web/Mobile), technologies preferred, any examples or references..."></textarea>
+            <label>Detailed Requirements *</label>
+            <textarea id="description" required placeholder="What should it do? Key features, platform, examples..."></textarea>
           </div>
           <div class="form-group">
-            <label for="deadline">Preferred Deadline (optional)</label>
-            <input type="text" id="deadline" name="deadline" placeholder="e.g. 2 weeks, or specific date">
+            <label>Bitcoin TXID *</label>
+            <input type="text" id="txid" required placeholder="Paste transaction ID">
           </div>
-          <div class="form-group">
-            <label for="txid">Bitcoin Transaction ID (TXID) / Payment Proof *</label>
-            <input type="text" id="txid" name="txid" required placeholder="Paste the TXID after payment">
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Software Request & Send Email</button>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Request</button>
         </form>
-        <div id="successMsg" class="alert alert-success" style="display:none; margin-top:1.5rem;">
-          <strong>Request prepared!</strong> Your email client should open with the request ready to send to <strong>ajewoletemitope11@gmail.com</strong>. Please send the email to complete the submission.
+        <div id="successMsg" class="alert alert-success hidden">Your email client will open with the request ready to send to ajewoletemitope11@gmail.com</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:12px;">
+          <div class="logo-mark">KS</div>
+          <span style="color:white;">Kojo Solutions</span>
         </div>
+        <p>Practical learning for real business results.</p>
       </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container text-center">
-      <h2>What Happens Next?</h2>
-      <p style="max-width:700px; margin:1rem auto 2rem; color:var(--text-light);">
-        Once we receive your email with payment proof, we review the requirements and begin development. 
-        You will receive updates and the final software files or access details via the email you provided.
-      </p>
-      <a href="../index.html" class="btn btn-outline">Back to Home</a>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-content">
-      <div class="footer-brand">
-        <h3>KOJO SOLUTIONS</h3>
-        <p>Learning Gathering for Business Solutions.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Courses</h4>
-        <ul>
+      <div>
+        <h4>Classes</h4>
+        <ul class="footer-links">
           <li><a href="course-101.html">101 — Website Creation</a></li>
           <li><a href="course-202.html">202 — Software Making</a></li>
           <li><a href="course-303.html">303 — WhatsApp Class</a></li>
         </ul>
       </div>
-      <div class="footer-links">
-        <h4>Direct Email</h4>
-        <ul>
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-links">
           <li><a href="mailto:ajewoletemitope11@gmail.com">ajewoletemitope11@gmail.com</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Kojo Solutions. All rights reserved.</p>
-    </div>
+    <div class="footer-bottom">© 2026 Kojo Solutions</div>
   </footer>
 
   <script src="../js/main.js"></script>
   <script>
     function copyAddress() {
-      const addr = document.getElementById('btcAddress').textContent;
-      navigator.clipboard.writeText(addr).then(() => {
-        alert('Bitcoin wallet address copied to clipboard!');
-      }).catch(() => {
-        prompt('Copy this address:', addr);
-      });
+      copyText(document.getElementById('btcAddress').textContent)
+        .then(() => alert('Address copied!'));
     }
 
-    function submitSoftwareRequest(e) {
+    function submitSoftware(e) {
       e.preventDefault();
-      
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const type = document.getElementById('softwareType').value;
-      const title = document.getElementById('title').value.trim();
-      const description = document.getElementById('description').value.trim();
-      const deadline = document.getElementById('deadline').value.trim();
-      const txid = document.getElementById('txid').value.trim();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const type = document.getElementById('type').value;
+      const title = document.getElementById('title').value;
+      const description = document.getElementById('description').value;
+      const txid = document.getElementById('txid').value;
 
-      const subject = encodeURIComponent(`Software Making Request ($50) - ${title || type} - ${name}`);
+      const subject = encodeURIComponent(`Software Request ($50) — ${title || type} — ${name}`);
       const body = encodeURIComponent(
-`NEW SOFTWARE REQUEST - Kojo Solutions Course 202
-==============================================
+`SOFTWARE REQUEST — Kojo Solutions Class 202
 
-CLIENT DETAILS
---------------
 Name: ${name}
 Email: ${email}
-Phone/WhatsApp: ${phone || 'Not provided'}
-
-SOFTWARE DETAILS
-----------------
+Phone: ${phone || 'N/A'}
 Type: ${type}
-Title: ${title || 'Not specified'}
-Preferred Deadline: ${deadline || 'Flexible'}
+Title: ${title || 'N/A'}
+TXID: ${txid}
 
-FULL REQUIREMENTS:
-${description}
-
-PAYMENT
--------
-Amount: $50 USD in Bitcoin
-TXID / Proof: ${txid}
-Wallet used: bc1qw4l3wkn62pa4skszmwx66gr5r7da5das54y55t
-
-==============================================
-This request was submitted via the Kojo Solutions website.
-Please reply to the client email above.`
+REQUIREMENTS:
+${description}`
       );
-
-      // Open user's email client with pre-filled message to the business email
       window.location.href = `mailto:ajewoletemitope11@gmail.com?subject=${subject}&body=${body}`;
-
-      // Show success message
-      document.getElementById('successMsg').style.display = 'block';
-      
-      // Optional: reset after short delay
-      setTimeout(() => {
-        // Keep form data in case they need to resend
-      }, 500);
-
+      document.getElementById('successMsg').classList.remove('hidden');
       return false;
     }
   </script>
