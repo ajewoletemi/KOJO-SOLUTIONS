@@ -36,6 +36,9 @@
   <section class="page-hero">
     <h1>Class 202<br>Software Making</h1>
     <p>Request custom software. Describe what you need — we build it and deliver.</p>
+    <div class="page-hero-img">
+      <img src="../images/coding-laptop.jpg" alt="Developer coding software on laptop" loading="eager">
+    </div>
   </section>
 
   <section class="section">
@@ -45,18 +48,18 @@
       </div>
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon">1</div>
-          <h3>Describe</h3>
+          <img src="../images/software-team.jpg" alt="Software team discussion" class="feature-img" loading="lazy">
+          <h3>1. Describe</h3>
           <p>Tell us exactly what the software should do, platforms, and any preferences.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">2</div>
-          <h3>Pay $50</h3>
+          <img src="../images/business-meeting.jpg" alt="Business meeting" class="feature-img" loading="lazy">
+          <h3>2. Pay $50</h3>
           <p>Send $50 in Bitcoin and include the transaction ID with your request.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">3</div>
-          <h3>Receive</h3>
+          <img src="../images/woman-laptop.jpg" alt="Professional delivering work" class="feature-img" loading="lazy">
+          <h3>3. Receive</h3>
           <p>We build and deliver the solution directly to your email.</p>
         </div>
       </div>
@@ -153,7 +156,7 @@
   <script>
     function copyAddress() {
       copyText(document.getElementById('btcAddress').textContent)
-        .then(() => alert('Address copied!'));
+        .then(function() { alert('Address copied!'); });
     }
 
     function submitSoftware(e) {
@@ -166,21 +169,9 @@
       const description = document.getElementById('description').value;
       const txid = document.getElementById('txid').value;
 
-      const subject = encodeURIComponent(`Software Request ($50) — ${title || type} — ${name}`);
-      const body = encodeURIComponent(
-`SOFTWARE REQUEST — Kojo Solutions Class 202
-
-Name: ${name}
-Email: ${email}
-Phone: ${phone || 'N/A'}
-Type: ${type}
-Title: ${title || 'N/A'}
-TXID: ${txid}
-
-REQUIREMENTS:
-${description}`
-      );
-      window.location.href = `mailto:ajewoletemitope11@gmail.com?subject=${subject}&body=${body}`;
+      const subject = encodeURIComponent('Software Request ($50) — ' + (title || type) + ' — ' + name);
+      const body = encodeURIComponent('SOFTWARE REQUEST — Kojo Solutions Class 202\n\nName: ' + name + '\nEmail: ' + email + '\nPhone: ' + (phone || 'N/A') + '\nType: ' + type + '\nTitle: ' + (title || 'N/A') + '\nTXID: ' + txid + '\n\nREQUIREMENTS:\n' + description);
+      window.location.href = 'mailto:ajewoletemitope11@gmail.com?subject=' + subject + '&body=' + body;
       document.getElementById('successMsg').classList.remove('hidden');
       return false;
     }

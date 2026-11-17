@@ -36,6 +36,9 @@
   <section class="page-hero">
     <h1>Class 303<br>WhatsApp Class</h1>
     <p>Join the private learning community. Live sessions, peer support, and exclusive resources including professional business email setup.</p>
+    <div class="page-hero-img">
+      <img src="../images/team-collab.jpg" alt="Learning community collaborating" loading="eager">
+    </div>
   </section>
 
   <section class="section">
@@ -46,22 +49,22 @@
       </div>
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon">🎓</div>
+          <img src="../images/learning-team.jpg" alt="Live learning session" class="feature-img" loading="lazy">
           <h3>Live Classes</h3>
           <p>Interactive sessions covering practical business and digital skills.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">💬</div>
+          <img src="../images/software-team.jpg" alt="Community discussion" class="feature-img" loading="lazy">
           <h3>Private Community</h3>
           <p>Direct access to mentors and fellow learners in a focused WhatsApp group.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📧</div>
+          <img src="../images/woman-laptop.jpg" alt="Professional email setup" class="feature-img" loading="lazy">
           <h3>Business Email Guide</h3>
           <p>Step-by-step training on setting up professional inbox-receivable emails (SPF, DKIM, DMARC, providers).</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🚀</div>
+          <img src="../images/business-meeting.jpg" alt="Ongoing support" class="feature-img" loading="lazy">
           <h3>Ongoing Support</h3>
           <p>Ask questions, share progress, and get feedback as you build.</p>
         </div>
@@ -69,7 +72,6 @@
     </div>
   </section>
 
-  <!-- Payment + Unlock -->
   <section class="section" style="padding-top:0;">
     <div class="container">
       <div class="section-header">
@@ -103,7 +105,6 @@
           I Have Paid — Unlock Group
         </button>
 
-        <!-- Unlocked Content -->
         <div id="unlocked" class="hidden" style="margin-top:32px;">
           <div class="alert alert-success">
             Access unlocked. Welcome to the Kojo Solutions community.
@@ -120,7 +121,6 @@
             </p>
           </div>
 
-          <!-- Business Email Content (unlocked resource) -->
           <div style="background:var(--bg); border-radius:16px; padding:28px; margin-top:24px; text-align:left;">
             <h3 style="margin-bottom:16px;">Exclusive Resource: Business Email Setup</h3>
             <p style="margin-bottom:16px;">As a Class 303 member you now have access to the full guide on creating professional, inbox-receivable business emails.</p>
@@ -152,7 +152,6 @@
             <p style="margin-top:20px; font-weight:600;">Full discussion and Q&A happens inside the WhatsApp group.</p>
           </div>
 
-          <!-- Logo for group -->
           <div style="text-align:center; margin-top:32px;">
             <p style="font-weight:600; margin-bottom:12px;">Group Logo</p>
             <div style="width:90px; height:90px; background:linear-gradient(135deg,#0057FF,#3B82F6); border-radius:22px; display:inline-flex; align-items:center; justify-content:center; color:white; font-size:2rem; font-weight:900; box-shadow:0 8px 24px rgba(0,87,255,0.3);">
@@ -196,7 +195,7 @@
   <script>
     function copyAddress() {
       copyText(document.getElementById('btcAddress').textContent)
-        .then(() => alert('Bitcoin address copied!'));
+        .then(function() { alert('Bitcoin address copied!'); });
     }
 
     function unlockGroup() {
