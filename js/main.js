@@ -1,41 +1,48 @@
-// Kojo Solutions - Main JS
+// Kojo Solutions — Menu & Utilities
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Highlight current nav link based on path
-  const path = window.location.pathname;
-  const links = document.querySelectorAll('nav a');
-  links.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href && path.includes(href.replace('../', '').replace('./', '')) && href !== '#' && !href.startsWith('mailto')) {
-      // Already handled by class="active" in HTML, this is backup
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('menuToggle');
+  const panel = document.getElementById('navPanel');
+  const overlay = document.getElementById('navOverlay');
+
+  if (toggle && panel && overlay) {
+    function openMenu() {
+      toggle.classList.add('active');
+      panel.classList.add('open');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
     }
-  });
 
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      const target = document.querySelector(targetId);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+    function closeMenu() {
+      toggle.classList.remove('active');
+      panel.classList.remove('open');
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', () => {
+      if (panel.classList.contains('open')) closeMenu();
+      else openMenu();
     });
-  });
+
+    overlay.addEventListener('click', closeMenu);
+
+    // Close when a link is clicked
+    panel.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  }
 });
 
-// Utility: copy text to clipboard
-function copyToClipboard(text) {
+function copyText(text) {
   if (navigator.clipboard) {
     return navigator.clipboard.writeText(text);
-  } else {
-    const ta = document.createElement('textarea');
-    ta.value = text;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    return Promise.resolve();
   }
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  document.body.appendChild(ta);
+  ta.select();
+  document.execCommand('copy');
+  document.body.removeChild(ta);
+  return Promise.resolve();
 }
