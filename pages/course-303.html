@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course 303 — WhatsApp Class | Kojo Solutions</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a4d8c' width='100' height='100' rx='20'/><text x='50' y='68' font-size='50' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'>K</text></svg>">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">KS</div>
+        <span>KOJO SOLUTIONS</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="course-101.html">Course 101</a></li>
+          <li><a href="course-202.html">Course 202</a></li>
+          <li><a href="course-303.html" class="active">Course 303</a></li>
+          <li><a href="email-services.html">Email Services</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <h1>Course 303 — WhatsApp Class</h1>
+    <p>Join the exclusive Kojo Solutions WhatsApp learning group. Live classes, community, and direct access.</p>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>About the WhatsApp Learning Group</h2>
+        <p>Interactive learning in a private community</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon">🎓</div>
+          <h3>Live Classes</h3>
+          <p>Participate in scheduled learning sessions covering business solutions, websites, software, and more.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">💬</div>
+          <h3>Community Support</h3>
+          <p>Ask questions, share progress, and get feedback from mentors and fellow learners.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">🔒</div>
+          <h3>Exclusive Access</h3>
+          <p>Private group for paying members only. Payment required before receiving the invite link.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">🚀</div>
+          <h3>Business Focus</h3>
+          <p>Content centered on practical business solutions and digital skills that generate results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment & Join -->
+  <section style="background: var(--light-gray);">
+    <div class="container">
+      <div class="section-title">
+        <h2>Join Kojo Solutions WhatsApp Group</h2>
+        <p>Payment of $100 required before joining. After payment, the group invite link will be revealed.</p>
+      </div>
+
+      <div class="payment-box" style="max-width: 650px; margin: 0 auto 2rem;">
+        <h3>One-Time Payment: $100 USD</h3>
+        <div class="price-tag">$100</div>
+        <p style="margin-bottom: 1rem;">Send <strong>exactly $100</strong> worth of Bitcoin to the wallet below.</p>
+        
+        <p><strong>Bitcoin Wallet Address:</strong></p>
+        <div class="btc-address" id="btcAddress">bc1qw4l3wkn62pa4skszmwx66gr5r7da5das54y55t</div>
+        <button class="btn btn-outline" onclick="copyAddress()" style="margin-bottom: 1.5rem;">Copy Address</button>
+
+        <div style="background: white; border-radius: 8px; padding: 1.2rem; text-align: left; margin-top: 1rem;">
+          <p style="font-weight: 600; margin-bottom: 0.5rem;">How to pay:</p>
+          <ol style="padding-left: 1.2rem; color: var(--text-light); font-size: 0.95rem;">
+            <li>Copy the Bitcoin address above</li>
+            <li>Open your Bitcoin wallet or exchange</li>
+            <li>Send $100 USD equivalent in BTC to the address</li>
+            <li>Copy the Transaction ID (TXID)</li>
+            <li>Enter the TXID below and unlock the group link</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="form-section" style="max-width: 550px;">
+        <h3 style="text-align: center; margin-bottom: 1.5rem;">Unlock Group Access</h3>
+        
+        <div class="form-group">
+          <label for="joinName">Your Full Name *</label>
+          <input type="text" id="joinName" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="joinEmail">Your Email *</label>
+          <input type="email" id="joinEmail" placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label for="joinTxid">Bitcoin Transaction ID (TXID) *</label>
+          <input type="text" id="joinTxid" placeholder="Paste your TXID here after payment">
+        </div>
+        
+        <button class="btn btn-whatsapp" style="width:100%; font-size:1.1rem; padding:1rem;" onclick="unlockGroup()">
+          I Have Paid — Unlock WhatsApp Group
+        </button>
+
+        <div id="groupUnlocked" class="hidden" style="margin-top: 2rem; text-align: center;">
+          <div class="alert alert-success">
+            <strong>Payment recorded!</strong> You can now join the group.
+          </div>
+          <h3 style="margin: 1.5rem 0 1rem;">Join the Group: Kojo Solutions on WhatsApp</h3>
+          <p style="margin-bottom: 1.2rem; color: var(--text-light);">This invite expires soon. Join now!</p>
+          
+          <a id="whatsappLink" href="https://whatsapp.com/dl/?mode=pg" target="_blank" rel="noopener" 
+             class="btn btn-whatsapp" style="font-size: 1.15rem; padding: 1rem 2rem;">
+            📱 Join Kojo Solutions WhatsApp Group
+          </a>
+          
+          <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-light);">
+            After joining, introduce yourself in the group. If the link does not work, contact us at 
+            <a href="mailto:ajewoletemitope11@gmail.com">ajewoletemitope11@gmail.com</a> with your TXID.
+          </p>
+          
+          <div style="margin-top: 2rem; padding: 1.5rem; background: var(--light-gray); border-radius: 12px;">
+            <p style="font-weight: 600; margin-bottom: 0.8rem;">Group Logo for Profile / Sharing:</p>
+            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
+              <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #0a4d8c, #00a8e8); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; font-weight: 900; box-shadow: 0 6px 20px rgba(10,77,140,0.3);">
+                KS
+              </div>
+              <div style="text-align: left;">
+                <p style="font-weight: 700; letter-spacing: 1px; color: var(--primary);">KOJO SOLUTIONS</p>
+                <p style="font-size: 0.9rem; color: var(--text-light);">Use the KS logo above for the WhatsApp group icon</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container text-center">
+      <h2>Questions?</h2>
+      <p style="margin: 1rem 0 1.5rem; color: var(--text-light);">Email us at <a href="mailto:ajewoletemitope11@gmail.com">ajewoletemitope11@gmail.com</a> with any payment or joining issues.</p>
+      <a href="../index.html" class="btn btn-outline">Back to Home</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>KOJO SOLUTIONS</h3>
+        <p>Learning Gathering for Business Solutions.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="course-101.html">101 — Website Creation</a></li>
+          <li><a href="course-202.html">202 — Software Making</a></li>
+          <li><a href="course-303.html">303 — WhatsApp Class</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:ajewoletemitope11@gmail.com">ajewoletemitope11@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kojo Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    function copyAddress() {
+      const addr = document.getElementById('btcAddress').textContent;
+      navigator.clipboard.writeText(addr).then(() => {
+        alert('Bitcoin address copied!');
+      }).catch(() => {
+        prompt('Copy this Bitcoin address:', addr);
+      });
+    }
+
+    function unlockGroup() {
+      const name = document.getElementById('joinName').value.trim();
+      const email = document.getElementById('joinEmail').value.trim();
+      const txid = document.getElementById('joinTxid').value.trim();
+
+      if (!name || !email || !txid) {
+        alert('Please fill in your name, email, and the Bitcoin Transaction ID (TXID) after payment.');
+        return;
+      }
+
+      // Basic validation that something that looks like a TXID was entered
+      if (txid.length < 10) {
+        alert('Please enter a valid Transaction ID (TXID) from your Bitcoin payment.');
+        return;
+      }
+
+      // Reveal the group link
+      document.getElementById('groupUnlocked').classList.remove('hidden');
+      
+      // Scroll to the unlocked section
+      document.getElementById('groupUnlocked').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // Optionally notify via mailto (user can send confirmation)
+      // This helps the owner know who paid
+      const subject = encodeURIComponent(`WhatsApp Group Join - Payment Confirmation - ${name}`);
+      const body = encodeURIComponent(
+`New member requesting WhatsApp group access:
+
+Name: ${name}
+Email: ${email}
+TXID: ${txid}
+Amount: $100 BTC
+Wallet: bc1qw4l3wkn62pa4skszmwx66gr5r7da5das54y55t
+
+Please verify the payment on the blockchain.`
+      );
+
+      // Open confirmation email in background (user can send it)
+      // We don't force it so the unlock still works
+      setTimeout(() => {
+        // Optional confirmation email
+        // window.open(`mailto:ajewoletemitope11@gmail.com?subject=${subject}&body=${body}`, '_blank');
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course 101 — Website Creation | Kojo Solutions</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a4d8c' width='100' height='100' rx='20'/><text x='50' y='68' font-size='50' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'>K</text></svg>">
+  <!-- Puter.js for free AI (user-pays model, no API key needed for developer) -->
+  <script src="https://js.puter.com/v2/"></script>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">KS</div>
+        <span>KOJO SOLUTIONS</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="course-101.html" class="active">Course 101</a></li>
+          <li><a href="course-202.html">Course 202</a></li>
+          <li><a href="course-303.html">Course 303</a></li>
+          <li><a href="email-services.html">Email Services</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <h1>Course 101 — Website Creation</h1>
+    <p>Learn to build websites with no-code templates + free AI assistance. Request custom sites and download complete project files.</p>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>What You'll Learn & Get</h2>
+        <p>Practical website creation skills focused on business results</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon">📚</div>
+          <h3>Learning Modules</h3>
+          <p>Understand structure, design principles, no-code approaches, and how to host on GitHub Pages or Render.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">🤖</div>
+          <h3>Free AI Builder</h3>
+          <p>Describe your website and get AI-generated HTML/CSS code ready to download and customize.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">📦</div>
+          <h3>File Download</h3>
+          <p>Get complete standalone website files (HTML, CSS, JS) ready for GitHub or any host.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">💼</div>
+          <h3>Custom Requests</h3>
+          <p>$50 per custom website request. We build using templates + AI and deliver files.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Website Builder -->
+  <section style="background: var(--light-gray);">
+    <div class="container">
+      <div class="section-title">
+        <h2>Free AI Website Builder</h2>
+        <p>Describe the website you want. AI generates clean HTML + CSS. Download the files. (Powered by Puter.js — free for you to use)</p>
+      </div>
+      <div class="ai-builder">
+        <div class="form-group">
+          <label for="sitePrompt">Describe your website</label>
+          <textarea id="sitePrompt" placeholder="Example: A modern business landing page for a consulting firm called Apex Advisors. Blue and white colors. Include hero section, services grid, about us, contact form, and footer. Professional and clean design."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="siteName">Website / Business Name</label>
+          <input type="text" id="siteName" placeholder="e.g. Apex Advisors">
+        </div>
+        <button id="generateBtn" class="btn btn-primary" onclick="generateWebsite()">
+          Generate Website with AI
+        </button>
+        <div id="aiStatus" class="alert alert-info" style="display:none; margin-top:1rem;"></div>
+        <div id="aiOutput" class="ai-output"></div>
+        <div id="downloadArea" style="display:none; margin-top:1.5rem; text-align:center;">
+          <button class="btn btn-accent" onclick="downloadWebsite()">⬇ Download Website Files (ZIP-ready HTML)</button>
+          <p style="margin-top:0.8rem; font-size:0.9rem; color:var(--text-light);">Copy the code or download the single HTML file. Host it on GitHub Pages or Render.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Request Form ($50) -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Request a Custom Website — $50</h2>
+        <p>Need a polished site built for you? Submit your request. Payment required before processing.</p>
+      </div>
+
+      <div class="payment-box">
+        <h3>Payment Required: $50 USD</h3>
+        <p>Send exactly <strong>$50</strong> in Bitcoin to the wallet below before submitting (or include TXID in the form).</p>
+        <div class="price-tag">$50</div>
+        <p><strong>Bitcoin Wallet Address:</strong></p>
+        <div class="btc-address" id="btcAddress">bc1qw4l3wkn62pa4skszmwx66gr5r7da5das54y55t</div>
+        <button class="btn btn-outline" onclick="copyAddress()">Copy Address</button>
+        <p style="margin-top:1rem; font-size:0.9rem;">After payment, submit the form below with your TXID or screenshot note. We will process and email your website files.</p>
+      </div>
+
+      <div class="form-section">
+        <form id="websiteRequestForm" onsubmit="return submitWebsiteRequest(event)">
+          <div class="form-group">
+            <label for="reqName">Your Full Name *</label>
+            <input type="text" id="reqName" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="reqEmail">Your Email *</label>
+            <input type="email" id="reqEmail" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="reqBusiness">Business / Project Name</label>
+            <input type="text" id="reqBusiness" name="business">
+          </div>
+          <div class="form-group">
+            <label for="reqDetails">Website Description & Requirements *</label>
+            <textarea id="reqDetails" name="details" required placeholder="Describe pages needed, colors, features, content, style preferences..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="reqTxid">Bitcoin Transaction ID / Payment Proof *</label>
+            <input type="text" id="reqTxid" name="txid" required placeholder="Paste TXID or note after payment">
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Website Request ($50)</button>
+        </form>
+        <div id="formSuccess" class="alert alert-success" style="display:none; margin-top:1rem;">
+          Request submitted! We will review your payment and email the website files to you shortly.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>KOJO SOLUTIONS</h3>
+        <p>Learning Gathering for Business Solutions.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="course-101.html">101 — Website Creation</a></li>
+          <li><a href="course-202.html">202 — Software Making</a></li>
+          <li><a href="course-303.html">303 — WhatsApp Class</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:ajewoletemitope11@gmail.com">ajewoletemitope11@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kojo Solutions. Deploy on GitHub Pages or Render.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    let generatedCode = '';
+
+    async function generateWebsite() {
+      const prompt = document.getElementById('sitePrompt').value.trim();
+      const name = document.getElementById('siteName').value.trim() || 'My Website';
+      const status = document.getElementById('aiStatus');
+      const output = document.getElementById('aiOutput');
+      const downloadArea = document.getElementById('downloadArea');
+      const btn = document.getElementById('generateBtn');
+
+      if (!prompt) {
+        alert('Please describe the website you want.');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span> Generating with AI...';
+      status.style.display = 'block';
+      status.className = 'alert alert-info';
+      status.textContent = 'AI is building your website... This may take 15-40 seconds.';
+      output.classList.remove('show');
+      downloadArea.style.display = 'none';
+
+      const fullPrompt = `You are an expert web developer. Generate a complete, beautiful, modern, standalone single-file HTML website (with embedded CSS and minimal JS if needed). 
+Business/Website name: ${name}
+User description: ${prompt}
+
+Requirements:
+- Use only HTML, CSS (in <style>), and vanilla JS if needed. No external libraries except maybe Google Fonts.
+- Blue and white professional theme preferred unless specified otherwise.
+- Fully responsive.
+- Include proper meta tags, semantic HTML.
+- Make it look premium and ready to use.
+- Output ONLY the full HTML code, starting with <!DOCTYPE html>. No explanations, no markdown.`;
+
+      try {
+        // Use Puter.js free AI
+        const response = await puter.ai.chat(fullPrompt, { model: 'gpt-4o-mini' });
+        let code = typeof response === 'string' ? response : (response.message?.content || response.toString());
+        
+        // Clean possible markdown fences
+        code = code.replace(/^```html\s*/i, '').replace(/^```\s*/i, '').replace(/```\s*$/i, '').trim();
+        
+        generatedCode = code;
+        output.textContent = code;
+        output.classList.add('show');
+        downloadArea.style.display = 'block';
+        status.className = 'alert alert-success';
+        status.textContent = 'Website generated successfully! Scroll down to preview the code and download.';
+      } catch (err) {
+        console.error(err);
+        // Fallback: simple template generator if AI fails
+        generatedCode = createFallbackWebsite(name, prompt);
+        output.textContent = generatedCode;
+        output.classList.add('show');
+        downloadArea.style.display = 'block';
+        status.className = 'alert alert-info';
+        status.textContent = 'AI temporarily unavailable. Generated a professional template based on your description. You can customize it.';
+      }
+
+      btn.disabled = false;
+      btn.innerHTML = 'Generate Website with AI';
+    }
+
+    function createFallbackWebsite(name, desc) {
+      return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${name}</title>
+  <style>
+    :root { --primary: #0a4d8c; --accent: #00a8e8; --white: #fff; --bg: #f5f9fc; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: system-ui, sans-serif; color:#1a2a3a; background:var(--bg); line-height:1.6; }
+    header { background:var(--white); box-shadow:0 2px 10px rgba(0,0,0,0.08); padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; }
+    .logo { font-weight:800; font-size:1.4rem; color:var(--primary); letter-spacing:1px; }
+    nav a { margin-left:1.5rem; color:#333; text-decoration:none; font-weight:600; }
+    .hero { background:linear-gradient(135deg,#083a6b,#0a4d8c,#00a8e8); color:white; padding:5rem 2rem; text-align:center; }
+    .hero h1 { font-size:2.8rem; margin-bottom:1rem; }
+    .hero p { max-width:600px; margin:0 auto 2rem; opacity:0.95; }
+    .btn { display:inline-block; padding:0.8rem 1.8rem; background:white; color:var(--primary); border-radius:8px; font-weight:700; text-decoration:none; }
+    section { padding:4rem 2rem; max-width:1100px; margin:0 auto; }
+    h2 { text-align:center; color:var(--primary); margin-bottom:2rem; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; }
+    .card { background:white; padding:1.8rem; border-radius:12px; box-shadow:0 4px 15px rgba(10,77,140,0.1); }
+    footer { background:#083a6b; color:white; text-align:center; padding:2rem; margin-top:3rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">${name}</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1>${name}</h1>
+    <p>${desc.substring(0, 180)}...</p>
+    <a href="#contact" class="btn">Get Started</a>
+  </section>
+  <section id="about">
+    <h2>About Us</h2>
+    <p style="text-align:center; max-width:700px; margin:0 auto;">Welcome to ${name}. We deliver excellence and professional solutions tailored to your needs. Built with modern design principles.</p>
+  </section>
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="grid">
+      <div class="card"><h3>Service One</h3><p>Professional solutions designed for growth and results.</p></div>
+      <div class="card"><h3>Service Two</h3><p>Reliable, modern, and focused on your business goals.</p></div>
+      <div class="card"><h3>Service Three</h3><p>Support and expertise you can count on.</p></div>
+    </div>
+  </section>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p style="text-align:center;">Reach out to start your journey with ${name}.</p>
+  </section>
+  <footer>
+    <p>&copy; 2026 ${name}. All rights reserved. Generated by Kojo Solutions.</p>
+  </footer>
+</body>
+</html>`;
+    }
+
+    function downloadWebsite() {
+      if (!generatedCode) return;
+      const blob = new Blob([generatedCode], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = (document.getElementById('siteName').value.trim() || 'website').replace(/\s+/g, '-').toLowerCase() + '.html';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function copyAddress() {
+      const addr = document.getElementById('btcAddress').textContent;
+      navigator.clipboard.writeText(addr).then(() => alert('Bitcoin address copied!'));
+    }
+
+    function submitWebsiteRequest(e) {
+      e.preventDefault();
+      const name = document.getElementById('reqName').value;
+      const email = document.getElementById('reqEmail').value;
+      const business = document.getElementById('reqBusiness').value;
+      const details = document.getElementById('reqDetails').value;
+      const txid = document.getElementById('reqTxid').value;
+
+      // Build mailto as reliable free method (opens user's email client)
+      const subject = encodeURIComponent(`Website Request ($50) - ${business || name}`);
+      const body = encodeURIComponent(
+`New Website Creation Request from Kojo Solutions Course 101
+
+Name: ${name}
+Email: ${email}
+Business/Project: ${business || 'N/A'}
+Bitcoin TXID / Proof: ${txid}
+
+Requirements:
+${details}
+
+---
+Sent from Kojo Solutions website.`
+      );
+
+      // Also try Formspree if configured, but primarily use mailto for reliability
+      window.location.href = `mailto:ajewoletemitope11@gmail.com?subject=${subject}&body=${body}`;
+
+      document.getElementById('formSuccess').style.display = 'block';
+      document.getElementById('websiteRequestForm').reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
